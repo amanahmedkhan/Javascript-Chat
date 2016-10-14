@@ -1,0 +1,162 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Basic Topics of Programming</title>
+		<style type="text/css">
+			.main-menu{padding:0 0;}
+			.main-menu li{display:inline-block; padding-right:15px; list-style:none;}
+		</style>
+	</head>
+	<body>
+		<!-- Array Push -->
+			<!-- <p>Array Push</p>
+			<p id="arrayList"></p>
+			<button onclick="arrayClick()">Add Array</button> -->
+		<!-- Array Push -->
+		
+		<!-- Navigation -->
+			<nav>
+				<ul class="main-menu"></ul>
+			</nav>
+		<!-- Navigation -->
+
+		<!-- Article Member -->
+			<article class="members-container">
+			</article>
+		<!-- Article Member -->
+
+		<!-- Form Submit Start -->
+			<div class="sendForm">
+				<h2>Send Message</h2>
+				<form action="message">
+					<select name="memberselect">
+						<option>Select Member</option>
+						<option value="zain">Zain</option>
+						<option value="aman">Aman</option>
+						<option value="rizwan">Rizwan</option>
+					</select>
+					</br>
+					</br>
+					<textarea name="" id="" cols="30" rows="10"></textarea>
+					</br>
+					<button>Submit</button>
+				</form>
+			</div>
+		<!-- Form Submit End -->
+
+		<!-- Javascript Start -->
+			<script type="text/javascript">
+				// Array Push
+					// var array = ["Array1", "Array2", "Array3", "Array4"];
+					// var arraytext = "";
+					// var i;
+					// for (i = 0; i < array.length; i++) {
+					// 	arraytext += array[i];
+					// }
+					// document.getElementById("arrayList").innerHTML = arraytext;
+
+					// function arrayClick(){
+					// 	array.push("Array5");
+					// 	document.getElementById("arrayList").innerHTML = array;
+					// }
+				// Array Push
+
+				// Object Start
+					// var machine = {type:"slim", model:"532", color:"black"};
+					// machine.weight = '350';
+					// machine.size = '500';
+					// machine = 100;
+					// machine += 150;
+					// machine -= 150;
+					// machine *= 8;
+					// machine /= 150;
+					// console.log(machine);
+				// Object End
+
+				// insert array in object
+					//var array, machine = {array: array = ["Array1"]};
+					//console.log(array);
+				// insert array in object
+
+				var i,
+				members = [
+					{
+						id: 1,
+						name: "Zain",
+						dis: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+						age: "26"
+					},
+					{
+						id: 2,
+						name: "Aman",
+						dis: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+						age: "10"
+					},
+					{
+						id: 3,
+						name: "Rizwan",
+						dis: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+						age: "20"
+					}
+				],
+				mainMenu = document.getElementsByClassName("main-menu")[0];
+				//memberDetail = document.getElementsByClassName("memberDetail")[0];
+
+				for(i=0; i<= members.length-1; i++){
+					// Define status
+					if(members[i].age < 26){
+						members[i].status = "Young";
+					} else {
+						members[i].status = "Elder";
+					}
+
+					// Define activity
+					if(members[i].name == "Zain"){
+						members[i].ativity = ["Gym", "Dancing",];
+					}
+					if(members[i].name == "Aman"){
+						members[i].ativity = ["Gaming", "Cycling"];
+					}
+					if(members[i].name == "Rizwan"){
+						members[i].ativity = ["Gaming", "Gym"];
+					}
+
+					// Main Menu
+					var menuList = document.createElement("li");
+					mainMenu.insertBefore(menuList, mainMenu.lastChild).innerHTML = members[i].name;
+
+					// Member Detail
+					//document.getElementsByClassName("memberDetail")[0];
+					var container = document.getElementsByClassName("members-container")[0];
+					memberDetail = document.createElement("section");
+					memberDetail.className = "memberDetail";
+					//var section = document.createElement("section");
+					var id = document.createElement("a");
+					var age = document.createElement("small");
+					var status = document.createElement("p");
+					var heading = document.createElement("h2");
+					var ativity = document.createElement("span");
+					var dis = document.createElement("p");
+
+					// memberDetail.innerHTML = members[i];
+					memberDetail.insertBefore(id, memberDetail.lastChild).innerHTML = members[i].id;
+					memberDetail.insertBefore(heading, memberDetail.lastChild).innerHTML = members[i].name;
+					memberDetail.insertBefore(age, memberDetail.lastChild).innerHTML = members[i].age + " Age: <br>";
+					memberDetail.insertBefore(ativity, memberDetail.lastChild).innerHTML = members[i].ativity;
+					memberDetail.insertBefore(dis, memberDetail.lastChild).innerHTML = members[i].dis;
+					container.appendChild(memberDetail);
+					/////////container.insertBefore(memberDetail,container.lastChild);
+					// var section = document.querySelector("section");
+					// var heading = document.createElement("h1");
+					// section.insertBefore(heading, section.lastChild).innerHTML = members[i].name;
+					// section.insertBefore(section.lastChild).innerHTML = members[i].name;
+
+					// var memberInfo = document.createElement("section");
+					// memberDetail.insertBefore(memberInfo, memberDetail.lastChild).innerHTML = members[i];
+					// var heading = document.createElement("h1");
+				};
+				console.log(members);
+			</script>
+		<!-- Javascript Start -->
+	</body>
+</html>
