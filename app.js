@@ -42,7 +42,10 @@ for(i=0; i<= members.length-1; i++){
 
 	// Main Menu
 	var menuList = document.createElement("li");
-	mainMenu.insertBefore(menuList, mainMenu.lastChild).innerHTML = members[i].name;
+	var menuListClick = document.createElement("a");
+	menuListClick.setAttribute('href', '?id=' + members[i].id);
+	mainMenu.insertBefore(menuList, mainMenu.lastChild).innerHTML;
+	menuList.insertBefore(menuListClick, menuList.lastChild).innerHTML = members[i].name;
 
 	// Member Detail
 	//document.getElementsByClassName("memberDetail")[0];
@@ -56,6 +59,7 @@ for(i=0; i<= members.length-1; i++){
 	var heading = document.createElement("h2");
 	var ativity = document.createElement("span");
 	var dis = document.createElement("p");
+	message = document.createElement("p");
 
 	// memberDetail.innerHTML = members[i];
 	memberDetail.insertBefore(id, memberDetail.lastChild).innerHTML = members[i].id;
@@ -63,7 +67,10 @@ for(i=0; i<= members.length-1; i++){
 	memberDetail.insertBefore(age, memberDetail.lastChild).innerHTML = members[i].age + " Age: <br>";
 	memberDetail.insertBefore(ativity, memberDetail.lastChild).innerHTML = members[i].ativity;
 	memberDetail.insertBefore(dis, memberDetail.lastChild).innerHTML = members[i].dis;
+	memberDetail.insertBefore(message, memberDetail.lastChild).innerHTML = members[i].message;
 	container.appendChild(memberDetail);
 };
 console.log(members);
-getMemberByID(2);
+var memberId = window.location.search.replace("?id=",'');
+getMemberByID(memberId);
+//getMemberByName('Aman');
